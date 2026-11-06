@@ -10,11 +10,9 @@
 
 | Tệp | Có? |
 | --- | --- |
-| [`day01_lab.ipynb`](day01_lab.ipynb) — notebook đã chạy, còn output | ☐ |
-| [`lab1_report.json`](lab1_report.json) — do ô "Báo cáo cuối" sinh ra | ☐ |
-| [`hand_calc.jpg`](hand_calc.jpg) — ảnh tính tay có các bước | ☐ |
-
-## 2. Kết quả chính
+| [`day01_lab.ipynb`](day01_lab.ipynb) — notebook đã chạy, còn output | x |
+| [`lab1_report.json`](lab1_report.json) — do ô "Báo cáo cuối" sinh ra | x |
+| [`hand_calc.jpg`](hand_calc.jpg) — ảnh tính tay có các bước | x |
 
 ## 2. Kết quả chính
 
@@ -33,7 +31,20 @@ Bảng so sánh kết quả các mô hình ở Phần 5:
 
 ## 3. Dự đoán và thực tế
 
-*Chọn 3 dự đoán `predict(...)` lệch nhiều nhất so với kết quả. Mỗi cái: bạn đoán gì, ra gì, vì sao lệch.*
+**1. `predict("ml_lr")` — Learning rate = 50**
+- **Dự đoán:** Loss sẽ dao động mạnh vì learning rate quá lớn.
+- **Thực tế:** Loss tăng vọt ban đầu nhưng nhanh chóng giảm xuống 0.005, không dao động kéo dài.
+- **Vì sao lệch:** Dù learning rate lớn, mô hình vẫn hội tụ nhanh trên bộ dữ liệu này.
+
+**2. `predict("dl_curve")` — F1 của MLP**
+- **Dự đoán:** F1 của MLP gần tương đương Logistic Regression.
+- **Thực tế:** MLP đạt 0.941, cao hơn LogReg (0.872), chênh lệch 0.069.
+- **Vì sao lệch:** MLP có khả năng học quan hệ phi tuyến giữa các đặc trưng, giúp cải thiện khả năng nhận diện spam.
+
+**3. `predict("llm_fewshot")` — Few-shot Learning**
+- **Dự đoán:** F1 chỉ tăng nhẹ hoặc không đổi.
+- **Thực tế:** F1 tăng từ 0.884 (zero-shot) lên 0.927 (few-shot), tăng 0.043.
+- **Vì sao lệch:** Bốn ví dụ có nhãn trong prompt giúp LLM nhận biết rõ hơn đặc điểm của spam và ham, cải thiện kết quả nhiều hơn dự kiến trên SUB 40.
 
 ## 4. Phân tích 50 case khó
 

@@ -16,7 +16,20 @@
 
 ## 2. Kết quả chính
 
-*Chép bảng so sánh cuối Phần 5 (F1 test, F1 SUB 40, p95 ms/tin, USD/1k tin) của chính bạn.*
+## 2. Kết quả chính
+
+Bảng so sánh kết quả các mô hình ở Phần 5:
+
+| Mô hình               | F1 test | F1 SUB 40 | p95 ms/tin | USD/1k tin |
+| --------------------- | ------- | --------- | ---------- | ---------- |
+| 1. BoW + LogReg       | 0.872   | 0.919     | 0.152      | 0.0        |
+| 2. BoW + MLP          | 0.941   | 0.947     | 3.632      | 0.0        |
+| 3a. MiniLM + kNN      | 0.903   | 0.947     | 67.330     | 0.0        |
+| 3b. MiniLM + LogReg   | 0.948   | 0.974     | 42.043     | 0.0        |
+| 3c. MiniLM + MLP head | 0.952   | 0.974     | 50.105     | 0.0        |
+| 4a. LLM nhỏ zero-shot | 0.884   | 0.884     | 3443.305   | 0.0        |
+| 4b. LLM lớn zero-shot | 0.905   | 0.905     | 2415.324   | 0.0        |
+| 4c. LLM nhỏ few-shot  | 0.927   | 0.927     | 2870.702   | 0.0        |
 
 ## 3. Dự đoán và thực tế
 
